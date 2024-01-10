@@ -6,6 +6,10 @@
       <p class="subtext">Unlocking limitless digital possibilities</p>
     </div>
 
+    <div class="footerSection">
+      <p>Webmesh. All Rights Reserved {{currentYear}}</p>
+    </div>
+
     <div class="image-container">
       <picture>
         <source srcset="assets/webmesh-website-mobile.png" media="(max-width: 800px)">
@@ -15,6 +19,18 @@
 
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const currentYear = ref('');
+
+onMounted(() => {
+    currentYear.value = new Date().getFullYear();
+})
+
+</script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -26,6 +42,11 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+p{
+  font-size: 0.8rem;
+  color: white;
+}
+
 .title{
   font-size: 4rem;
   color: white;
@@ -33,7 +54,7 @@ body{
 }
 
 .subtext{
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: white;
 }
 
@@ -60,6 +81,14 @@ body{
   height: auto;
 }
 
+.footerSection{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 @media only screen and (max-width: 800px) {
   .title{
     font-size: 2.5rem;
@@ -71,3 +100,5 @@ body{
 }
 
 </style>
+<script setup lang="ts">
+</script>
